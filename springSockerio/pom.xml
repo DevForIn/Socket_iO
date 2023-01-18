@@ -8,10 +8,10 @@
 		<version>2.7.7</version>
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
-	<groupId>kr.jiSocketio</groupId>
-	<artifactId>springSockerio</artifactId>
+	<groupId>kr.chat</groupId>
+	<artifactId>ChatToNode</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>springSockerio</name>
+	<name>ChatToNode</name>
 	<description>Spring Boot Socketio</description>
 	<properties>
 		<java.version>17</java.version>
@@ -23,6 +23,12 @@
 		</dependency>
 
 		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-devtools</artifactId>
+			<scope>runtime</scope>
+			<optional>true</optional>
+		</dependency>
+		<dependency>
 			<groupId>org.projectlombok</groupId>
 			<artifactId>lombok</artifactId>
 			<optional>true</optional>
@@ -32,10 +38,30 @@
 			<artifactId>spring-boot-starter-test</artifactId>
 			<scope>test</scope>
 		</dependency>
+		
+		<!-- @Inject -->
 		<dependency>
-		   <groupId>com.corundumstudio.socketio</groupId>
-		   <artifactId>netty-socketio</artifactId>
-		   <version>1.7.17</version>
+			<groupId>javax.inject</groupId>
+			<artifactId>javax.inject</artifactId>
+			<version>1</version>
+		</dependency>		
+		<!-- Servlet -->
+		<dependency>
+			<groupId>javax.servlet</groupId>
+			<artifactId>servlet-api</artifactId>
+			<version>2.5</version>
+			<scope>provided</scope>
+		</dependency>
+		<dependency>
+			<groupId>javax.servlet.jsp</groupId>
+			<artifactId>jsp-api</artifactId>
+			<version>2.1</version>
+			<scope>provided</scope>
+		</dependency>
+		<dependency>
+			<groupId>javax.servlet</groupId>
+			<artifactId>jstl</artifactId>
+			<version>1.2</version>
 		</dependency>		
 	</dependencies>
 
