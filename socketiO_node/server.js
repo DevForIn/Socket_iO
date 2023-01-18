@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 var app = require('express')();
 var http = require('http').Server(app);
 var io = require('socket.io')(http);
@@ -22,3 +23,29 @@ io.on('connection', function(socket){
 http.listen(82, function(){
   console.log('listening on *:82');
 });
+=======
+var app = require("express")();
+var http = require("http").createServer(app);
+var io = require('socket.io')(http);
+
+var port = 3000;
+http.listen(port, () => {
+  console.log("listening on *:" + port);
+});
+
+io.on('connection', function (socket) {
+  console.log(socket.id, 'Connected');
+
+  socket.emit('msg', `${socket.id} 연결 되었습니다.`);
+  
+  socket.on('msg', function (data) {
+    console.log(socket.id, data);
+    
+    socket.emit('msg', `Server : "${data}" 받았습니다.`);
+  });
+});
+
+app.get('/', (req, res) => {
+  res.sendFile(__dirname + '/index.html');
+})
+>>>>>>> 33ab0241b90f6eb6f2b9235c0ce3e4beaab614e1
